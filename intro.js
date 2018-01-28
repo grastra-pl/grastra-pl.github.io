@@ -5,6 +5,10 @@ intro = {
     czasySlajdow: [
         3000,
         6000,
+        3000,
+        3000,
+        3000,
+        3000,
         3000
     ],
 
@@ -16,14 +20,19 @@ intro = {
         this.game.load.image('medium', 'assets/intro/medium.jpeg');
         this.game.load.image('longTime', 'assets/intro/long_time_ago.jpg');
         this.game.load.image('miasto', 'assets/intro/miasto.jpg');
+        this.game.load.image('dom', 'assets/intro/house.png');
+        this.game.load.image('shopday', 'assets/intro/shopp_dawn.png');
+        this.game.load.image('shopnight', 'assets/intro/shopp_night.png');
     },
 
     create: function () {
         console.log('intro create');
-        // tloIntra = this.game.add.image(0, 0, 'planszaStartowa');
         this.dodajSlajd(this.game.add.image(0, 0, 'medium'));
         this.dodajSlajd(this.game.add.image(0, 0, 'longTime'));
         this.dodajSlajd(this.game.add.image(0, 0, 'miasto'));
+        this.dodajSlajd(this.game.add.image(0, 0, 'dom'));
+        this.dodajSlajd(this.game.add.image(0, 0, 'shopday'));
+        this.dodajSlajd(this.game.add.image(0, 0, 'shopnight'));
     },
 
     dodajSlajd: function(slajd) {
