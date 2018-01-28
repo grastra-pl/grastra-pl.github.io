@@ -51,6 +51,10 @@ window.onload = function() {
         }
     }
 
+    function wrocDoGlownegoMenu() {
+
+    }
+
     function update() {
         //snake.update();
         switch (rodzajGry) {
