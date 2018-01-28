@@ -13,7 +13,7 @@ snake = {
     x: 0,
     y: 0,
     frameCounter: 0,
-    gameSpeed: 6,
+    gameSpeed: 12,
     score: 0,
     playerRotation: Math.PI,
     game: {},
@@ -46,10 +46,10 @@ snake = {
     },
 
     ukryj: function() {
-        this.tloSnake.position = {x:-1500,y:-1500};
+        this.tloSnake.visible = false;
         this.head.position = {x:-1500,y:-1500};
         this.apple.position = {x:-1500,y:-1500};
-        this.gameText.position = {x:-1500,y:-1500};
+        this.gameText.visible = false;
         if (this.tail.length>0) {
             for (var i = 0; i < this.tail.length; i++) {
                 this.tail[i].position = {x:-1500,y:-1500};
@@ -57,7 +57,8 @@ snake = {
         }
     },
     pokaz: function() {
-        this.tloSnake.position = {x:0,y:0};
+        this.tloSnake.visible = true
+        this.gameText.visible = true;
         this.placeRandomApple();
     },
 
@@ -98,7 +99,7 @@ snake = {
             this.apple.destroy();
             this.placeRandomApple();
             this.gameSpeed-=0.5;
-            if (this.gameSpeed <= 1) this.gameSpeed = 1;
+            if (this.gameSpeed <= 2) this.gameSpeed = 2;
             this.dlOgona+=this.ileDodacDoOgona;
         }
     },
@@ -197,10 +198,10 @@ snake = {
             this.x = this.canvasWidth - this.playerSize - 2*this.playerSize;
         } else if (this.x >= this.canvasWidth - 2*this.playerSize) {
             this.x = - 2*this.playerSize;
-        } else if (this.y <= 0 - 3*this.playerSize) {
+        } else if (this.y <= 0 - 2*this.playerSize) {
             this.y = this.canvasHeight - this.playerSize - 2*this.playerSize;
-        } else if (this.y >= this.canvasHeight - 2*this.playerSize) {
-            this.y = - 2*this.playerSize;
+        } else if (this.y >= this.canvasHeight - this.playerSize) {
+            this.y = - this.playerSize;
         }
 
         this.head.rotation = this.playerRotation;
