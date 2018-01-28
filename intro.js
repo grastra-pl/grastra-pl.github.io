@@ -15,6 +15,8 @@ intro = {
     ktorySlajd: 0,
     muzykaMenu: {},
 
+    powrot: function() {},
+
     preload: function () {
         this.game.load.audio('muzykaMenu', 'assets/intro/muzyka_menu.mp3');
 
@@ -26,6 +28,8 @@ intro = {
         this.game.load.image('dom', 'assets/intro/house.png');
         this.game.load.image('shopday', 'assets/intro/shopp_dawn.png');
         this.game.load.image('shopnight', 'assets/intro/shopp_night.png');
+
+
     },
 
     create: function () {
@@ -59,6 +63,8 @@ intro = {
                 this.tlaIntra[this.ktorySlajd].visible = true;
                 this.czasStartu = Date.now();
                 this.ktorySlajd++;
+            } else {
+                this.powrot();
             }
         } else if (timeInMs-this.czasStartu > this.czasySlajdow[this.ktorySlajd]-1000) {
             if (this.ktorySlajd<this.tlaIntra.length) {

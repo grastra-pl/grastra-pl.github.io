@@ -19,6 +19,6 @@ pasek = {
     },
 
     ukryj: function () {
-        tloPaska.position= {x:-1000,y:-1000};
+        tloPaska.visible = false;
     }
 };

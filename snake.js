@@ -27,6 +27,9 @@ snake = {
     ileDodacDoOgona: 1,
 
     tloSnake: {},
+    powrot: function (){},
+    przegrana: function (){},
+    wygrana: function (){},
 
     updateScale: function () {
         this.tolerancjaX = 15 * this.skala;
@@ -112,7 +115,8 @@ snake = {
         for (var i=this.tail.length-2; i>0; i--) {
             if ((this.tail[i].position.x===this.x) && (this.tail[i].position.y===this.y) )
             {
-                console.log('zderzenie z ogonem:'+i+' x='+this.x+' y'+this.y);
+                //console.log('zderzenie z ogonem:'+i+' x='+this.x+' y'+this.y);
+                this.przegrana();
             }
         }
     },
