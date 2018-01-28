@@ -13,8 +13,11 @@ intro = {
     ],
 
     ktorySlajd: 0,
+    muzykaMenu: {},
 
     preload: function () {
+        this.game.load.audio('muzykaMenu', 'assets/intro/muzyka_menu.mp3');
+
         this.czasStartu = Date.now();
         console.log('tlo intra');
         this.game.load.image('medium', 'assets/intro/medium.jpeg');
@@ -33,6 +36,9 @@ intro = {
         this.dodajSlajd(this.game.add.image(0, 0, 'dom'));
         this.dodajSlajd(this.game.add.image(0, 0, 'shopday'));
         this.dodajSlajd(this.game.add.image(0, 0, 'shopnight'));
+
+        this.muzykaMenu = this.game.add.audio('muzykaMenu');
+        this.muzykaMenu.play();
     },
 
     dodajSlajd: function(slajd) {
